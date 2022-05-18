@@ -1,3 +1,5 @@
+import random
+
 #Day one -> Using the print() function
 print("Hello,\nWelcome to my python course")
 
@@ -62,19 +64,48 @@ is_python_in_course = "Python" in course_name
 # % module => returns the remainder of division
 # ** => exponentiation - x ** y = x to the power of y
 
-# Day one: If, else if and else statements
-agree_to_generate_password = False
+# # Day one: If, else if and else statements
+# agree_to_generate_password = False
+#
+# if agree_to_generate_password:
+#     print("Your password is: 123456789")
+# else:
+#     print("Ok then, create a strong password")
 
-if agree_to_generate_password:
-    print("Your password is: 123456789")
+ask_user = input("Do you want us to generate a password for you? ")
+lowerCase = "abcdefghijklmnopqrstuvwxyz"
+upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+numbers = "1234567890"
+symbols = "!@#$%^&*()_+{}"
+
+all = lowerCase + upperCase + numbers + symbols
+length = 10
+password = "".join(random.sample(all, length))
+
+if ask_user == "yes":
+    print(f"Your generated password is: {password}")
 else:
-    print("Ok then, create a strong password")
+    print("Ok then, create your password")
 
-#Day one: Comparison operators
 
+
+# Day one: Comparison operators
+#
 # a > b (greater than)
 # a >= b (greater than or equal to)
 # a < b (less than)
 # a <= b (less than or equal to)
 # a == b (equals)
 # a != b (not equals)
+
+# Day one: Loops(while loop)
+
+# i = 1
+# while i < 5:
+#     print(i)
+#     i += 1
+
+# Day one: Loops(for loops)
+# i = 1
+# for i in range(1, 5):
+#     print(i)
