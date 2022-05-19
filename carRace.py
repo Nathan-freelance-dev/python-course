@@ -1,9 +1,8 @@
-race_count = 0
-race_limit = 1000000
+car_is_started = False
+has_car_stopped = False
 
-
-while race_count < race_limit:
-    terminal_input = input("=> ")
+while True:
+    terminal_input = input("=> ").lower()
 
     if terminal_input == "help":
         print('Type "start" to start the race')
@@ -12,11 +11,21 @@ while race_count < race_limit:
         print('')
 
     elif terminal_input == "start":
-        print('The race has started')
+        if car_is_started:
+            print("The car has already started")
+        else:
+            car_is_started = True
+            print('The race has started')
         print('')
 
     elif terminal_input == "stop":
-        print("The race stopped, and you came out 1st")
+        if has_car_stopped:
+            print("The car has ready been stopped")
+
+        else:
+            has_car_stopped = True
+            print("The car has stopped, and the race was ended")
+
         print('')
 
     elif terminal_input == "quit":
@@ -24,6 +33,6 @@ while race_count < race_limit:
         print("")
         break
 
-    elif terminal_input != "stop" or "start" or "quit":
+    elif terminal_input != "stop" or "start" or "quit" or "help":
         print(f"hey, I don't understand what '{terminal_input}' means")
         print('')
